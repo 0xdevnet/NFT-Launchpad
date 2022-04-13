@@ -1,0 +1,37 @@
+{
+  "token_id": "225404398472153328019246101910132145806",
+  "token_uri": "ipfs://QmagrGb1z8gYgvHRkorEZ6AWrkh2hqDtKa7ecaxpUgjgJC",
+  "extension": {
+    "name": "Galactic Punk #9116",
+    "description": "Galactic Punks are 10,921 randomly generated NFTs on the Terra blockchain.",
+    "attributes": [
+      {
+        "trait_type": "backgrounds",
+        "value": "green planet landed"
+      },
+      {
+        "trait_type": "suits",
+        "value": "rising floor"
+      },
+      {
+        "trait_type": "species",
+        "value": "terrarian neptune 2"
+      },
+      {
+        "trait_type": "hair",
+        "value": "blue mid"
+      },
+      {
+        "trait_type": "glasses",
+        "value": "lightspeed"
+      },
+      {
+        "trait_type": "headware",
+        "value": "alien hat"
+      }
+    ],
+    "image": "ipfs://QmUpNx82NgHU6XUgySDPiT48i92Wug5kn7PQy8eNurw6ct"
+  },
+  "punk_number": 9116,
+  "rarity_score": 160.88645097306107
+}

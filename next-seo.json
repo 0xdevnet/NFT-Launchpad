@@ -1,0 +1,32 @@
+{
+  "title": "galactic-punks-site",
+  "titleTemplate": "%s | Oscar",
+  "description": "Galactic Punks are 10,921 randomly generated NFTs on the Terra blockchain.",
+  "favicon": "/favicon.ico",
+  "additionalMetaTags": [
+    {"property": "author", "content": "oscar buck"},
+    {
+      "property": "keywords",
+      "content": ""
+    }
+  ],
+  "twitter": {
+    "cardType": "summary",
+    "handle": "_0xBlock",
+    "site": "_0xBlock"
+  },
+  "openGraph": {
+    "type": "website",
+    "site_name": "Galactic Punks Site",
+    "profile": {
+      "firstName": "Oscar"
+    },
+    "images": [
+      {
+        "url": "/images/og.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  }
+}

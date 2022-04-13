@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/gpvalidator
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://galacticpunks.io
+  * I am gpvalidator (https://keybase.io/gpvalidator) on keybase.
+  * I have a public key ASDE9XLW6HDDoe_YPFAv97J8jJX5jNgv1BFMi4HwxY65lgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120f267ebe5bab3b631a462e6b42b899e29419179e6991045a8ef3b11c663e6e4770a",
+      "host": "keybase.io",
+      "kid": "0120c4f572d6e870c3a1efd83c502ff7b27c8c95f98cd82fd4114c8b81f0c58eb9960a",
+      "uid": "c3c2784377c7198dc27ea80e87499019",
+      "username": "gpvalidator"
+    },
+    "merkle_root": {
+      "ctime": 1636504728,
+      "hash": "43167f971b56cef99a9e810c416996455ba6204da6cff553c6c03f8943b90698cf014ac112829848fb4b7dd5ea97c2af3e666664fdfb782a743d99d98cc89bc9",
+      "hash_meta": "cc4489b2524db6ae041b6d3a435501b5f5c3c9c590dcc04019afe659c5169264",
+      "seqno": 21182950
+    },
+    "service": {
+      "entropy": "VzaZ1ikavmKja/mL5wSZ+O2S",
+      "hostname": "galacticpunks.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.8.0"
+  },
+  "ctime": 1636504803,
+  "expire_in": 504576000,
+  "prev": "ec6decd728dc50671566048ce1dd44e4889019a6530f1be1e6de3905d2e35f97",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgxPVy1uhww6Hv2DxQL/eyfIyV+YzYL9QRTIuB8MWOuZYKp3BheWxvYWTESpcCCMQg7G3s1yjcUGcVZgSM4d1E5IiQGaZTDxvh5t45BdLjX5fEIOfa0MwsA9U4WGCssjyPb1cMbNfqCb6e/Naei1rQ4g1wAgHCo3NpZ8RALkxUngSWtl3MgBVsZ7YEJMuW6k6WRaU+euZ5arq8oSBF768SPIvENOis1wEzIopAqaor9018pvsbcwG5ovTUD6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIApOOxr1PJZzsOn+yDSQ0yocXT9PPFyZ8YR3jid7tUHHo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gpvalidator
+
+==================================================================
