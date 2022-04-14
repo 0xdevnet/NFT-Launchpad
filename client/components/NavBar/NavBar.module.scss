@@ -1,3 +1,18 @@
 .logo {
-  cursor: pointer;
+  cursor: pointer; 
+}
+
+.logoContainer{
+  border-right: 1px solid #00000024;
+  margin-right: 50px;
+}
+
+.notificationContainer{
+  border-radius: 100%;
+  border: 1px solid black
+} 
+
+.connectWalletBtn{
+  // font-size: 50px;
+  border: 1px solid red;
 }

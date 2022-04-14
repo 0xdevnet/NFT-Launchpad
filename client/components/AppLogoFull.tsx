@@ -1,7 +1,7 @@
 import React from 'react'
 import NextImage, {ImageProps} from 'next/image'
-import LogoBlackText from '/public/images/logo.png'
-import LogoWhiteText from '/public/images/logo.png'
+import LogoBlackText from '/public/images/logo-dark.png'
+import LogoWhiteText from '/public/images/logo-dark.png'
 import {useTheme} from '@mui/material'
 
 const AppLogoFull: React.FC<Omit<ImageProps, 'src'>> = (props) => {

@@ -15,7 +15,7 @@ const NotificationBadge: React.FC<Props> = ({...rest}) => {
 
   return (
     <IconButton
-      onClick={appThemeContext.toggleColorMode}
+      // onClick={appThemeContext.toggleColorMode}
       color={isDarkMode ? 'primary' : 'secondary'}
       {...rest}
     >
@@ -26,7 +26,7 @@ const NotificationBadge: React.FC<Props> = ({...rest}) => {
 
 export function Notification() {
   return (
-    <Badge badgeContent={4} color="primary">
+    <Badge badgeContent="!" color="primary">
       <NotificationsNoneIcon color="action" />
     </Badge>
   )
