@@ -45,10 +45,10 @@ const NavBar: React.FC = () => {
           backgroundColor: isScrolling && !isDarkTheme ? '#f5f8fa' : isDarkTheme ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
           backdropFilter: isScrolling && isDarkTheme && 'blur(8px)',
           padding: (theme) => ({
-             xs: theme.spacing(2, 1),
-            sm: theme.spacing(2, 2),
-            md: theme.spacing(4, 6),
-          })
+            xs: theme.spacing(1, 2),
+            sm: theme.spacing(1, 4),
+            md: theme.spacing(1, 12)
+          }),
         }}
       >
         <Toolbar>
