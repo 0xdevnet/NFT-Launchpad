@@ -48,13 +48,12 @@ const HomeFooter: React.FC = () => {
           }}
           gap={4}
         >
-          <Typography variant="p"> Get The Latest FlyPad Updates</Typography>
+          <Typography variant="body2"> Get The Latest FlyPad Updates</Typography>
           <TextField
             placeholder="Your Email address"
             inputProps={{
               style: {
                 padding: 10,
-                paddingRight: 0,
                 paddingRight: 0,
                 margin: 0,
               },
