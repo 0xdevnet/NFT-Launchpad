@@ -9,6 +9,7 @@ import {
   Link,
   Stack,
   TextField,
+  useTheme,
 } from '@mui/material'
 import ColorModeToggle from '../ColorModeToggle'
 import NotificationBadge from '../NotificationBadge'
@@ -38,7 +39,8 @@ const NavItem: React.FC<NavItemProps> = ({href, label, isCurrentPath}) => {
 
 const FullNavMenu: React.FC = () => {
   const currentPath = useRouter().pathname
-
+  const theme = useTheme()
+  const isDarkMode = theme.palette.mode === 'dark'
   const onViewCollectionPage = currentPath === PUNKS_COLLECTION_PATH
   const onWalletPage = currentPath === '/wallet'
 
@@ -50,8 +52,12 @@ const FullNavMenu: React.FC = () => {
       width="100%"
     >
       <Stack direction="row" gap={3}>
-        <NavItem href={'/'} label="Home" isCurrentPath={onViewCollectionPage} />
-        <NavItem href={'/'} label="Launchpad" isCurrentPath={onWalletPage} />
+        <NavItem href={'/'} label="Home" isCurrentPath={currentPath === '/'} />
+        <NavItem
+          href={'/'}
+          label="Launchpad"
+          isCurrentPath={currentPath === '/launchpad'}
+        />
       </Stack>
       <Stack direction="row" alignItems="center" gap={3}>
         <TextField
@@ -75,16 +81,22 @@ const FullNavMenu: React.FC = () => {
             border: '1px solid #00000024',
           }}
         />
-        <Button variant="contained"
-        sx={{
-          color: "white",
-          backgroundColor: "black"
-        }}
+        <Button
+          variant="contained"
+          color={'secondary'}
+          sx={[
+            {
+              '&:hover': {
+                backgroundColor: theme.palette.primary.main,
+              },
+            },
+          ]}
         >
           Connect Wallet
         </Button>
         <ColorModeToggle
           size="small"
+          color={'secondary'}
           sx={{
             border: '1px solid #00000024',
           }}

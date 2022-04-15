@@ -37,7 +37,7 @@ const FullNavMenu: React.FC = () => {
         isCurrentPath={onViewCollectionPage}
       />
       <NotificationBadge size="small" />
-      <Button variant="contained">Connect Wallet</Button>
+      <Button href={'/connect'} variant="contained">Connect Wallet</Button>
       <ColorModeToggle size="small" />
     </Stack>
   )

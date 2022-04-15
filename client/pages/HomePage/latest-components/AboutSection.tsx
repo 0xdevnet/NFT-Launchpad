@@ -11,11 +11,15 @@ import {
     Button
 } from '@mui/material';
 import Typewriter from "typewriter-effect";
+import classes from '../HomePage.module.scss';
+import { useTheme } from '@mui/material';
 
 
 const CoreCard: React.FC = () => {
+    const theme = useTheme()
+    const isDarkTheme = theme.palette.mode === 'dark'
     return (
-        <Card sx={{ height: '100%' }}>
+        <Card sx={{ height: '100%' }} className={isDarkTheme ? classes.darkCardBackground : ""}>
             <CardContent>
                 <Typography variant="h6" color="text.secondary">
                     <Typewriter
@@ -41,12 +45,15 @@ const AboutSection = () => {
                     variant="h4"
                     display="inline"
                     sx={{
-                        fontWeight: "bold"
+                        fontWeight: 'bold',
                     }}
                 >
-                    What is <Typography display="inline" variant="h4" color="text.primary" sx={{
-                        fontWeight: "bold"
-                    }}>FlyPad</Typography>
+                    What is
+                    <Box display="inline" sx={{
+                        color: (theme) => theme.palette.primary.main,
+                        fontWeight: 'bold',
+                        paddingLeft: '10px'
+                    }}>FlyPad</Box>
                 </Typography>
             </Box>
             <Box>

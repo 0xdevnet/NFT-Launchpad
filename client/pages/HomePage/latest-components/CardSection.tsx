@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import classes from '../HomePage.module.scss';
+import NextLink from 'next/link'
 import {
     Box,
     Card,
@@ -10,8 +11,11 @@ import {
     Grid,
     Stack,
     Typography,
+    Link,
     Button
 } from '@mui/material';
+import { useTheme } from '@mui/material';
+import { ArrowForward } from '@mui/icons-material';
 
 type CoreCardProps = {
     icon: string;
@@ -26,21 +30,31 @@ const CoreCard: React.FC<CoreCardProps> = ({
     title,
     description,
 }) => {
+    const theme = useTheme()
+    const isDarkTheme = theme.palette.mode === 'dark'
     return (
-        <Card sx={{ height: '100%', overflow:'visible' }}>
-            <CardContent>
+        <Card sx={{ height: '100%', overflow: 'visible' }} className={isDarkTheme ? classes.darkCardBackground : ""}>
+            <CardContent className={classes.upOnHover}>
                 <Typography variant="h6" sx={{ textTransform: 'uppercase' }}>
                     <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Box>{subTitle}</Box>
-                        <Box className={classes.cardImage}><Image src={icon} alt="" width="100%" height="85px"/></Box>
+                        <Box className={classes.cardImage}><Image src={icon} alt="" width="100%" height="85px" /></Box>
                     </Box>
                 </Typography>
-                <Typography gutterBottom variant="subtitle1">
+                <Typography gutterBottom variant="h4">
                     {title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body1" color="text.secondary">
                     {description}
                 </Typography>
+                <NextLink href={"/"}>
+                    <Link underline="none" sx={{
+                        marginTop:'20px',
+                        color:'#fff'
+                    }}>
+                        <ArrowForward/>
+                    </Link>
+                </NextLink>
             </CardContent>
         </Card >
     );
@@ -91,11 +105,16 @@ const CardSection = () => {
                 <Typography
                     variant="h4"
                     display="inline"
-                // sx={{
-                //     borderBottom: (theme) => `4px solid ${theme.palette.primary.main}`,
-                // }}
+                    sx={{
+                        fontWeight: 'bold',
+                    }}
                 >
-                    Why should you FlyStart?
+                    Why should you
+                    <Box display="inline" sx={{
+                        color: (theme) => theme.palette.primary.main,
+                        fontWeight: 'bold',
+                        paddingLeft: '10px'
+                    }}>FlyStart</Box>?
                 </Typography>
             </Box>
             <Box>

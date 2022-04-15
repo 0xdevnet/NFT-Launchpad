@@ -8,7 +8,7 @@ const AppPage: React.FC<Props> = ({ children, ...rest }) => {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
+        minHeight: '100vh'
       }}
     >
       {/*Nav Bar*/}
