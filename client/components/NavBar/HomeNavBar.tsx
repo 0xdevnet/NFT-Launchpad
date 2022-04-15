@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 // import FullNavMenu from './FullNavMenu';
 import HomeFullNavMenu from '../NavBar/HomeFullNavMenu'
@@ -25,7 +25,7 @@ const NavBar: React.FC = () => {
   const isDarkTheme = theme.palette.mode === 'dark'
   const renderFullMenu = useMediaQuery(theme.breakpoints.up('sm'))
   const [isScrolling, setIsScrolling] = useState(false)
-  
+
   useEffect(() => {
     if (typeof window !== undefined) {
       window.addEventListener('scroll', function (e) {
@@ -41,21 +41,14 @@ const NavBar: React.FC = () => {
         color="transparent"
         sx={{
           boxShadow: 'none',
-          borderBottom:  theme.palette.mode === 'light' ? '1px solid #00000024' : '1px solid #ffffff14',
-          backgroundColor:
-            isScrolling && theme.palette.mode === 'light'
-              ? '#f5f8fa'
-              :  theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
-          backdropFilter:
-            isScrolling && theme.palette.mode === 'dark' && 'blur(8px)',
+          borderBottom: !isDarkTheme ? '1px solid #00000024' : '1px solid #ffffff14',
+          backgroundColor: isScrolling && !isDarkTheme ? '#f5f8fa' : isDarkTheme ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+          backdropFilter: isScrolling && isDarkTheme && 'blur(8px)',
           padding: (theme) => ({
-            xs: theme.spacing(1, 2),
-            sm: theme.spacing(1, 4),
-            md: theme.spacing(1, 12),
-            // xs: theme.spacing(2, 1),
-            // sm: theme.spacing(2, 2),
-            // md: theme.spacing(4, 6),
-          }),
+             xs: theme.spacing(2, 1),
+            sm: theme.spacing(2, 2),
+            md: theme.spacing(4, 6),
+          })
         }}
       >
         <Toolbar>

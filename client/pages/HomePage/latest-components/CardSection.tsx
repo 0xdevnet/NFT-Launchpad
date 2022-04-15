@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import classes from '../HomePage.module.scss';
 import NextLink from 'next/link'
@@ -31,28 +31,29 @@ const CoreCard: React.FC<CoreCardProps> = ({
     description,
 }) => {
     const theme = useTheme()
-    const isDarkTheme = theme.palette.mode === 'dark'
+    const isDarkTheme = theme.palette.mode === 'dark';
+    const [isHovering, setIsHovering] = useState("")
     return (
-        <Card sx={{ height: '100%', overflow: 'visible' }} className={isDarkTheme ? classes.darkCardBackground : ""}>
-            <CardContent className={classes.upOnHover}>
+        <Card sx={{ height: '100%', overflow: 'visible', cursor: "pointer" }} className={isDarkTheme ? classes.darkCardBackground : ""}>
+            <CardContent className={classes.upOnHover} onMouseEnter={()=>setIsHovering("#8e8ffe")} onMouseLeave={()=>setIsHovering("")}>
                 <Typography variant="h6" sx={{ textTransform: 'uppercase' }}>
                     <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Box>{subTitle}</Box>
                         <Box className={classes.cardImage}><Image src={icon} alt="" width="100%" height="85px" /></Box>
                     </Box>
                 </Typography>
-                <Typography gutterBottom variant="h4">
+                <Typography gutterBottom variant="h4" sx={{color:isHovering}}>
                     {title}
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
                     {description}
                 </Typography>
                 <NextLink href={"/"}>
-                    <Link underline="none" sx={{
-                        marginTop:'20px',
-                        color:'#fff'
-                    }}>
-                        <ArrowForward/>
+                    <Link underline="none" >
+                        <ArrowForward sx={{
+                        marginTop: '30px',
+                        color: '#fff'
+                    }}/>
                     </Link>
                 </NextLink>
             </CardContent>

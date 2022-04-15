@@ -4,14 +4,17 @@ import {
   Button,
   Container,
   ContainerProps,
+  IconButton,
   InputAdornment,
   Link,
   Stack,
   TextField,
   Typography,
-  useTheme
+  useTheme,
 } from '@mui/material'
-import { Instagram, Twitter } from '@mui/icons-material'
+import {Instagram, Twitter} from '@mui/icons-material'
+import {borderRadius, padding} from '@mui/system'
+import DiscordIcon from '../pages/HomePage/components/DiscordIcon'
 
 const links = ['Magic Eden', 'Fly Coin', 'Home', 'About Us']
 
@@ -23,11 +26,13 @@ const links = ['Magic Eden', 'Fly Coin', 'Home', 'About Us']
 // }
 
 const HomeFooter: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
+  const isDarkMode = theme.palette.mode === 'dark'
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.mode === "dark" ? 'rgba(0,0,0,0.1)' : 'white',
+        backgroundColor:
+          theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.1)' : 'white',
       }}
     >
       <Stack
@@ -43,39 +48,54 @@ const HomeFooter: React.FC = () => {
       >
         <Stack
           sx={{
-            borderTop: '1px solid ',
+            borderTop: '1px solid' + theme.palette.secondary.light,
             paddingTop: '40px',
           }}
           gap={4}
         >
-          <Typography variant="body2"> Get The Latest FlyPad Updates</Typography>
+          <Typography variant="p"> Get The Latest FlyPad Updates</Typography>
           <TextField
             placeholder="Your Email address"
-            inputProps={{
-              style: {
-                padding: 10,
-                paddingRight: 0,
-                margin: 0,
-              },
-            }}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="end">
-                  <Button
-                    sx={{
-                      backgroundColor: 'black',
-                      padding: '10px',
-                    }}
+                <InputAdornment edge="end" position="end">
+                  <IconButton
+                    edge="end"
+                    color="primary"
+                    sx={[
+                      {
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.main,
+                        },
+                      },
+                      {
+                        backgroundColor: theme.palette.secondary.main,
+                        color: 'white',
+                        padding: '10px',
+                        borderRadius: '5px',
+                      },
+                    ]}
                   >
                     Subscribe
-                  </Button>
+                  </IconButton>
                 </InputAdornment>
               ),
             }}
             sx={{
               paddingRight: 0,
             }}
-          />
+          >
+            <Button
+              sx={{
+                backgroundColor: theme.palette.secondary.main,
+                padding: '10px',
+                margin: 0,
+                color: 'white',
+              }}
+            >
+              Subscribe
+            </Button>
+          </TextField>
           Email is safe. We don't spam.
         </Stack>
         <Stack>
@@ -94,7 +114,7 @@ const HomeFooter: React.FC = () => {
         direction="row"
         justifyContent="space-between"
         sx={{
-          borderTop: '1px solid black',
+          borderTop: '1px solid' + theme.palette.secondary.light,
         }}
       >
         <Stack
@@ -105,12 +125,7 @@ const HomeFooter: React.FC = () => {
           }}
           gap={5}
         >
-          <Box
-            sx={{
-              borderRight: '1px solid black',
-              paddingRight: '30px',
-            }}
-          >
+          <Box borderRight="1px solid black" paddingRight="30px">
             Copyright © 2022 FlyPad
           </Box>
           <Box
@@ -120,9 +135,27 @@ const HomeFooter: React.FC = () => {
           >
             Terms Privacy Policy
           </Box>
-          <Stack direction="row">
-            <Twitter />
-          </Stack>
+        </Stack>
+        <Stack direction="row" alignItems="center" gap={1} paddingRight="50px">
+          <Twitter
+            sx={[
+              {
+                '&:hover': {
+                  backgroundColor: theme.palette.primary.main,
+                },
+              },
+              {
+                backgroundColor: isDarkMode
+                  ? theme.palette.primary.light
+                  : theme.palette.secondary.light,
+                borderRadius: '100%',
+                padding: '5px',
+                cursor: 'pointer',
+                fontSize: '35px',
+              },
+            ]}
+          />
+          <DiscordIcon />
         </Stack>
       </Stack>
     </Box>

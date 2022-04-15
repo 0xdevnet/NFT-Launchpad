@@ -7,9 +7,11 @@ const getAppTheme = (mode: PaletteMode) => {
       mode,
       primary: {
         main: '#8e8ffe',
+        light: '#8e90fe50'
       },
       secondary: {
         main: '#1c1c20',
+        light: '#00000024'
       },
     },
     typography: {
@@ -25,3 +27,5 @@ const getAppTheme = (mode: PaletteMode) => {
 }
 
 export default getAppTheme
+
+
