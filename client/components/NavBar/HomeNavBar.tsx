@@ -12,6 +12,7 @@ import {
   useTheme,
   Box,
   Divider,
+  Theme,
 } from '@mui/material'
 
 import classes from './NavBar.module.scss'
@@ -42,9 +43,9 @@ const NavBar: React.FC = () => {
         sx={{
           boxShadow: 'none',
           borderBottom: !isDarkTheme ? '1px solid #00000024' : '1px solid #ffffff14',
-          backgroundColor: isScrolling && !isDarkTheme ? '#f5f8fa' : isDarkTheme ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
-          backdropFilter: isScrolling && isDarkTheme && 'blur(8px)',
-          padding: (theme) => ({
+          backgroundColor: (isScrolling && !isDarkTheme) ? '#f5f8fa' : isDarkTheme ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+          backdropFilter: (isScrolling && isDarkTheme) ? 'blur(8px)' : '',
+          padding: (theme : Object) => ({
             xs: theme.spacing(1, 2),
             sm: theme.spacing(1, 4),
             md: theme.spacing(1, 12)
@@ -52,10 +53,10 @@ const NavBar: React.FC = () => {
         }}
       >
         <Toolbar>
-          <Stack direction="row" alignItems="center" width="100%">
+          <Stack direction={renderFullMenu ? 'row' : 'column'} alignItems="center" width="100%">
             {/*Logo*/}
             <Link href="/" passHref>
-              <Box className={classes.logoContainer}>
+              <Box sx={{ borderRight: renderFullMenu ? '1px solid' + theme.palette.secondary.light : '', marginRight: theme.spacing(4) }}>
                 {renderFullMenu ? (
                   <AppLogoFull
                     className={classes.logo}
@@ -77,7 +78,9 @@ const NavBar: React.FC = () => {
             </Link>
 
             {/*Nav*/}
-            {renderFullMenu ? <HomeFullNavMenu /> : <MobileNavMenu />}
+            {/* {renderFullMenu ? <HomeFullNavMenu /> : <MobileNavMenu />} */}
+            {/* <MobileNavMenu /> */}
+            <HomeFullNavMenu />
           </Stack>
         </Toolbar>
       </AppBar>
