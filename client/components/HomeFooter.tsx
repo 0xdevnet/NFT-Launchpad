@@ -66,7 +66,7 @@ const HomeFooter: React.FC = () => {
         direction={mobileView ? 'column' : 'row'}
         gap={10}
         sx={{
-          padding: (theme : Object) => ({
+          padding: (theme: Object) => ({
             xs: theme.spacing(4, 2),
             sm: theme.spacing(4, 4),
             md: theme.spacing(8, 12),
@@ -164,7 +164,7 @@ const HomeFooter: React.FC = () => {
             Terms Privacy Policy
           </Box>
         </Stack>
-        <Stack direction="row" alignItems="center" justifyContent='center' gap={1} paddingRight="50px">
+        <Stack direction="row" alignItems="center" justifyContent='center' gap={1} paddingRight={mobileView ? ' ' : '100px'}>
           <Twitter
             sx={[
               {
